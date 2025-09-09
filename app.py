@@ -238,5 +238,7 @@ def cron_pull(body: CronParams):
         return {"added": 0, "note": "no chunks produced (check keys/flags)"}
 
     # Send to your existing ingest API
-    res = post_chunks(chunks)
-    return {"added": len(chunks), "ingest_result": res}
+    # res = post_chunks(chunks)
+    # return {"added": len(chunks), "ingest_result": res}
+
+    return {"added": len(chunks), "chunks": chunks[:2]}  # preview first 2
