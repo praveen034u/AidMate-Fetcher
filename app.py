@@ -238,7 +238,8 @@ def cron_pull(body: CronParams):
         return {"added": 0, "note": "no chunks produced (check keys/flags)"}
 
     # Send to your existing ingest API
-    # res = post_chunks(chunks)
-    # return {"added": len(chunks), "ingest_result": res}
+    # to run in local comment line 242 and 243 and uncomment 245, and do revert it for running in cloud run with scheduler
+    res = post_chunks(chunks)
+    return {"added": len(chunks), "ingest_result": res}
 
-    return {"added": len(chunks), "chunks": chunks[:2]}  # preview first 2
+    #return {"added": len(chunks), "chunks": chunks[:2]}  # preview first 2
